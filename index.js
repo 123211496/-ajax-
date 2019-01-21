@@ -13,17 +13,16 @@ function get(url,data,call){
 		method:'get',
 		header:header,
 		success:function(res=>{
-			 wx.hideLoading();
+		       wx.hideLoading();
 		},
 		fail: function () {
-      wx.hideLoading();
-      wx.showModal({
-        title: '网络错误',
-        content: '网络出错，请刷新重试',
-        showCancel: false
-      })
-    }
-	)
+                       wx.hideLoading();
+                       wx.showModal({
+                             title: '网络错误',
+                             content: '网络出错，请刷新重试',
+                             showCancel: false
+                       })
+                })
 	})
 }
 
