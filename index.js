@@ -4,7 +4,7 @@ const  header={    //配置请求头
   'content-type': 'application/json',
   'Authorization': null,
 }
-function get(url,data,call){
+function get(url,data,callback){
 	wx.hideLoading({
 		title:'加载中',
 	})
@@ -14,7 +14,7 @@ function get(url,data,call){
 		header:header,
 		success:function(res=>{
 		       if(res.code == 200) {
-		           call(res.data)
+		           callback(res.data)
 		          wx.hideLoading();
 	               }
 		},
