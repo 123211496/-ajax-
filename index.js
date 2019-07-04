@@ -13,7 +13,10 @@ function get(url,data,call){
 		method:'get',
 		header:header,
 		success:function(res=>{
-		       wx.hideLoading();
+		       if(res.code == 200) {
+		           call(res.data)
+		          wx.hideLoading();
+	               }
 		},
 		fail: function () {
                        wx.hideLoading();
